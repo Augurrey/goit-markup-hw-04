@@ -41,13 +41,16 @@ a {
 }
 
 /*-------------- Header -------------*/
-.header-container {
-  display: flex;
+header {
   border-bottom: 1px solid #e7e9fc;
   box-shadow:
     0 1px 6px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16),
     0 2px 1px 0 rgba(46, 47, 66, 0.08);
+}
+
+.header-container {
+  display: flex;
 }
 
 .header-logo {
@@ -438,7 +441,7 @@ a {
 }
 /*-------------- Footer -------------*/
 
-.footer-container {
+footer {
   background-color: #2e2f42;
   padding-block: 100px;
 }
@@ -473,7 +476,7 @@ a {
   gap: 16px;
 }
 
-footer .container {
+.footer-container {
   display: flex;
   flex-direction: row;
   align-items: baseline;
