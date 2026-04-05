@@ -75,6 +75,15 @@ header {
   gap: 40px;
 }
 
+.header-item:nth-child(1)::after {
+  display: block;
+  content: "";
+  background-color: #404bbf;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+}
+
 .header-link {
   font-weight: 500;
   font-size: 16px;
@@ -82,6 +91,7 @@ header {
   letter-spacing: 0.02em;
   color: #2e2f42;
   padding-block: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -107,6 +117,7 @@ header {
   letter-spacing: 0.02em;
   color: #434455;
   padding-block: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -117,8 +128,16 @@ header {
 /*-------------- Hero -------------*/
 
 .hero {
+  max-width: 1440px;
+  margin: 0 auto;
   background-color: #2e2f42;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding-block: 188px;
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(/images/people-office-1.jpg);
 }
 
 .hero-wrapper {
@@ -195,6 +214,24 @@ header {
   width: calc((100% - 72px) / 4);
 }
 
+.features-icon-container {
+  position: relative;
+  display: flex;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  height: 112px;
+  background-color: #f4f4fd;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+
+.features-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .features-subtitle {
   font-weight: 500;
   font-size: 20px;
@@ -269,6 +306,33 @@ header {
   color: #434455;
 }
 
+.team-socials {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.team-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #434455;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-icon {
+  fill: #ffffff;
+}
+
+.team-social-link:hover,
+.team-social-link:focus {
+  background-color: #404bbf;
+}
+
 /*-------------- Portfolio -------------*/
 
 .portfolio {
@@ -296,6 +360,7 @@ header {
 .portfolio-item {
   background: #ffffff;
   flex-basis: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-subtitle-wrapper {
@@ -325,6 +390,38 @@ header {
   color: #434455;
 }
 
+.portfolio-img-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding: 40px 32px;
+  color: #f4f4fd;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  background-color: #4d5ae5;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-overlay,
+.portfolio-item:focus .portfolio-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
 /*-------------- Footer -------------*/
 
 footer {
@@ -353,4 +450,25 @@ footer {
   color: #f4f4fd;
   width: 264px;
   margin-top: 16px;
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+  gap: 16px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+}
+
+.footer-social-text {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
